@@ -25,7 +25,7 @@ const ProgressBar = (props) => {
 	};
 
 	return (
-		<div className='containerStyles'>
+		<div data-testid={`progress-bar-${name}`} className='containerStyles'>
 			<span
 				className='labelStyles'
 				style={labelStyles}

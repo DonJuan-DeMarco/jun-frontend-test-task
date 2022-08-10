@@ -4,9 +4,8 @@ const Placement = () => {
 	const order = useSelector((state) => state.horses.finishOrder);
 
 	return (
-		<div className='podium'>
+		<div className='podium' data-testid='placement'>
 			<p className='finish'>Finish order:</p>
-
 			{order.map((place, i) => (
 				<div key={i} className={`place w${++i}`}>
 					<p>{i}</p>

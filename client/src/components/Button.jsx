@@ -11,7 +11,11 @@ const Button = () => {
 	};
 
 	return (
-		<button onClick={restart} className='connectionButton'>
+		<button
+			data-testid='button-1'
+			onClick={restart}
+			className='connectionButton'
+		>
 			Restart
 		</button>
 	);

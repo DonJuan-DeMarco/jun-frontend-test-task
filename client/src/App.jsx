@@ -12,7 +12,7 @@ const App = () => {
 
 	useEffect(() => {
 		socket.on('ticker', (round) => {
-			return dispatch(horseActions.updateDistance(round));
+			dispatch(horseActions.updateDistance(round));
 		});
 	}, [dispatch]);
 

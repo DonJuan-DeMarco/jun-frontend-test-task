@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RandomColor } from '../randomColor';
 import { socket } from '../socket';
 import { horseActions } from '../store/horses';
 import ProgressBar from './ProgressBar';
@@ -14,12 +15,6 @@ const Lineup = () => {
 			socket.disconnect();
 		}
 	}, [horses.length, order.length]);
-
-	const RandomColor = (name) => {
-		const arr = name.replace(/\s/g, '').split('');
-		const res = arr.reduce((acc, val) => acc + val.charCodeAt(), 0);
-		return res.toString(16);
-	};
 
 	return (
 		<div className='runningField'>
