@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
-import Horse from './components/Horse';
+import Button from './components/Button';
+import Lineup from './components/Lineup';
 import Placement from './components/Placement';
 import { connectSocket, socket } from './socket';
 import { horseActions } from './store/horses';
@@ -10,18 +11,22 @@ const App = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		socket.on('ticker', (round) =>
-			dispatch(horseActions.updateDistance(round))
-		);
+		socket.on('ticker', (round) => {
+			return dispatch(horseActions.updateDistance(round));
+		});
 	}, [dispatch]);
 
 	connectSocket();
 
 	return (
-		<div className='App'>
-			<Horse />
-			<Placement />
-		</div>
+		<>
+			<header className='header'>Horse Racing</header>
+			<div className='scoreboard'>
+				<Lineup />
+				<Button />
+				<Placement />
+			</div>
+		</>
 	);
 };
 

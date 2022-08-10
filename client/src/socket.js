@@ -2,13 +2,16 @@ import io from 'socket.io-client';
 
 let socket;
 
-const connectSocket = () => {
-	// socket.on('ticker', (round) => {
-	// 	socket.emit('ticker', round);
-	// });
-
-	socket = io('http://localhost:3002/');
+const startSocket = () => {
+	socket.disconnect();
+	socket.connect();
 	socket.emit('start');
+};
+
+const connectSocket = () => {
+	socket = io.connect('http://localhost:3002');
+	socket.emit('start');
+
 	socket.on('connect_error', (error) => {
 		console.warn('connect_error', error);
 	});
@@ -23,4 +26,4 @@ const connectSocket = () => {
 	});
 };
 
-export { socket, connectSocket };
+export { socket, connectSocket, startSocket };

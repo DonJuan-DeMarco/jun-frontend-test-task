@@ -5,4 +5,8 @@ export const reducers = {
 	finish(state, action) {
 		state.finishOrder.push(action.payload);
 	},
+	reset(state) {
+		state.finishOrder = [];
+		state.list = [];
+	},
 };
