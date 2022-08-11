@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render ProgressBar component 1`] = `
+<div
+  className="podium"
+  data-testid="placement"
+>
+  <p
+    className="finish"
+  >
+    Finish order:
+  </p>
+  <div
+    className="place w1"
+  >
+    <p>
+      1
+    </p>
+    <p>
+      Princess Diana
+    </p>
+  </div>
+  <div
+    className="place w2"
+  >
+    <p>
+      2
+    </p>
+    <p>
+      Cricket
+    </p>
+  </div>
+</div>
+`;

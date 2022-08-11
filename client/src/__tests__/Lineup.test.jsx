@@ -2,7 +2,8 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 import { render, screen, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import Placement from '../components/Placement';
+import Lineup from '../components/Lineup';
+import { connectSocket } from '../socket';
 
 afterEach(() => {
 	cleanup();
@@ -42,24 +43,22 @@ const store = configureStore({
 		horses: horseSlice.reducer,
 	},
 });
-
-test('Should render ProgressBar component', () => {
+connectSocket();
+test('Should render Lineup component', () => {
 	render(
 		<Provider store={store}>
-			<Placement />
+			<Lineup />
 		</Provider>
 	);
-	const placementElement = screen.getByTestId('placement');
-	expect(placementElement).toBeInTheDocument();
+	const lineupElement = screen.getByTestId('runningField');
+	expect(lineupElement).toBeInTheDocument();
 	const tree = renderer
 		.create(
 			<Provider store={store}>
-				<Placement />
+				<Lineup />
 			</Provider>
 		)
 		.toJSON();
 	expect(tree).toMatchSnapshot();
-	console.log('====================================');
-	console.log(store);
-	console.log('====================================');
+	console.log(tree);
 });

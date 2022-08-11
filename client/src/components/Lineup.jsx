@@ -17,7 +17,7 @@ const Lineup = () => {
 	}, [horses.length, order.length]);
 
 	return (
-		<div className='runningField'>
+		<div className='runningField' data-testid='runningField'>
 			{horses.map((horse, i) => {
 				if (
 					horse.distance === 1000 &&

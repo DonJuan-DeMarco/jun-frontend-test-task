@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Lineup component 1`] = `
+<div
+  className="runningField"
+  data-testid="runningField"
+>
+  <div
+    className="containerStyles"
+    data-testid="progress-bar-Princess Diana"
+  >
+    <span
+      className="labelStyles"
+      style={
+        Object {
+          "color": "#2c34",
+        }
+      }
+    >
+      Princess Diana run 220 meters
+    </span>
+    <div
+      className="fillerStyles"
+      style={
+        Object {
+          "backgroundColor": "#2c34",
+          "width": "22%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="containerStyles"
+    data-testid="progress-bar-Cricket"
+  >
+    <span
+      className="labelStyles"
+      style={
+        Object {
+          "color": "#29d5",
+        }
+      }
+    >
+      Cricket run 33 meters
+    </span>
+    <div
+      className="fillerStyles"
+      style={
+        Object {
+          "backgroundColor": "#29d5",
+          "width": "3.3%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
